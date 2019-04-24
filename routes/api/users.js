@@ -2,7 +2,9 @@
 const express = require('express');
 const router = express.Router();
 
-//bring in router. referring to route 5000/api/users/test not only /test done through middleware
+//bring in router. @route GET /api/users/test not /test
+//Discription tests Users route
+//access Privae
 router.get('/test', (req, res)=> res.json({msg: "Users works"}));
 
 module.exports = router;
