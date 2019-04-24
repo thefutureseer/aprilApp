@@ -1,5 +1,5 @@
 # aprilApp fullstack beginning with the backend
-JavaScript tech
+JavaScript technolgies
 Database Mongodb
 Node
 Express middleware
