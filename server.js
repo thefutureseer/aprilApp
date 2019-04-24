@@ -19,7 +19,7 @@ mongoose
 
 app.get('/', (req, res) => res.send('Hello there!'));
 
-//Use routes to connect 
+//Use routes/api to connect 
 app.use('/api/users', users);
 app.use('/api/posts', posts);
 app.use('/api/profile', profile);
