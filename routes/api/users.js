@@ -19,21 +19,24 @@ router.post('/register', (req, res) => {
    .then(user => {
      if(user) {
        return res.status(400).json({name: "Name already exists"});
-     } else {
+      } else {
        const newUser = new User({
          name: req.body.name,
          phone: req.body.phone,
          password: req.body.password
-       });
-       bcrypt.genSalt(10, (err, salt)=>{
-         bcrypt.hash(newUser.password, salt, (err, hash) => {
+        });
+        bcrypt.genSalt(10, (err, salt)=>{
+          bcrypt.hash(newUser.password, salt, (err, hash) => {
            if(err) throw err;
            newUser.password= hash;
-           newUser.save().then(user => res.json(user)).catch(err => console.log(err));
-         })
-       })
-     }
-   });
+           newUser
+            .save()
+            .then(user => res.json(user))
+            .catch(err => console.log(err));
+          })
+        })
+    }
+  });
 });
 
 
